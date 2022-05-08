@@ -1,0 +1,133 @@
+/* Inicio index */
+.container {
+    margin-top: 7%;
+    display: flex;
+    justify-content: center;
+    .carousel {
+        z-index: 0;
+        max-width: 80%;
+        .desta {
+            @extend %tituloDestacado;
+            @media screen and (max-width: 400px) {
+                padding-top: 16%;
+                font-size: 22px;   
+            }
+            @media screen and (min-width: 401px) and (max-width: 600px) {
+                font-size: 19px;
+                padding-top: 15%;
+                text-align: center;   
+            } 
+            @media screen and (min-width: 601px) and (max-width: 800px) {
+                font-size: 29px;   
+            }
+            @media screen and (min-width: 801px) and (max-width: 1100px) {
+                font-size: 27px;
+                padding-top: 16%;   
+            }
+        } 
+        .propiedadesCar {
+            border-radius: 20px;
+        } 
+        .botonCarrousel {
+            @media screen and (max-width: 400px) {
+                max-height: 50%;
+                top: 23%;  
+            }  
+        } 
+        .botonOfer {
+            background: rgb(59, 177, 69);
+            border-radius: 28px;
+            color: white;
+            font-family: $fontFamily;
+            font-size: 27px;
+            padding: 19px;
+            margin-top: 2%;
+            &:hover {
+                background: #f39405;
+                color: black; 
+            }
+            @media screen and (max-width: 400px) {
+                font-size: 13px;
+                padding: 15px;
+            }
+            @media screen and (min-width: 401px) and (max-width: 600px) {
+                font-size: 13px;
+                margin-top: 5px;
+            }
+            @media screen and (min-width: 601px) and (max-width: 800px) {
+                font-size: 15px;
+                padding: 10px;   
+            }
+        }   
+    }
+    @media screen and (max-width: 400px) {
+        @include mediaCarousel(100%, 13%);
+    }
+    @media screen and (min-width: 401px) and (max-width: 800px) {
+        @include mediaCarousel(60%, 15%);
+    }    
+}
+.grid-subida {
+    @include gridSub(grid, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    height: 40vh;
+    align-items: center;
+    @media screen and (max-width: 400px) {
+        height: auto;
+        margin-left: auto;    
+    }
+    @media screen and (min-width: 401px) and (max-width: 800px) {
+       height: auto; 
+    }
+    div {
+        @include gridSub(grid, repeat (2,auto));
+        row-gap: 10px;
+        justify-items: center;
+        @media screen and (max-width: 400px) {
+            row-gap: 1px;
+        }       
+        .subida {
+            width: 150px;
+            margin-top: 38px;
+            transition: all 1s;
+            &:hover {
+                transform: rotate(360deg) scale(1.5) translateY(-20px); 
+            }
+            @media screen and (max-width: 400px) {
+                width: 90px;    
+            }
+            @media screen and (min-width: 401px) and (max-width: 800px) {
+                width: 100px;
+            }
+        }
+        .formatos {
+            color: nth($colores, 2);
+            font-weight: bold;
+            text-align: center;
+            @media screen and (max-width: 400px) {
+                font-size: 12px;
+                color: nth($colores, 3);
+            }
+        }    
+    }
+    .archivo {
+        color: rgb(231, 231, 222);
+        font-weight: bold;
+        font-size: 25px;
+        text-align: center;
+        font-style: italic;
+        &:hover {
+            color: $fontColorPrincipal;
+        }
+        @media screen and (max-width: 400px) {
+            margin-top: 72px;
+            font-size: 12px;    
+        }
+        @media screen and (min-width: 401px) and (max-width: 800px) {
+            font-size: 15px;
+            margin-bottom: 0;
+            margin-top: 48px;
+        }
+    }
+}
+/* Fin index */
